@@ -128,14 +128,86 @@ div.home{
           font-size: 8vw;
           margin: 0;
         }
+        @keyframes left{
+          0%{ transform: translate(0, 0); }
+          5%{ transform: translate(0, -400%);}
+          80%{ transform: translate(0, -400%);}
+          100%{ transform: translate(0, 0);}
+        }
+        @keyframes right{
+          0%{ transform: translate(0, 0); }
+          5%{ transform: translate(0, 400%);}
+          80%{ transform: translate(0, 400%);}
+          100%{ transform: translate(0, 0);}
+        }
+        @keyframes sparkle{
+          15%{ opacity: 0; }
+          20%{ opacity: 1; }
+          30%{ opacity: 1; }
+          35%{ opacity: 0}; 
+        }
+        .animate:hover{
+          .logo{
+            #left{
+              animation: left 2s ease infinite;
+            }
+            #right{
+              animation: right 2s ease infinite;
+            }
+            #sparkle{
+              animation: sparkle 2s ease infinite;
+            }
+          }
+          .msg{
+            opacity: 1;
+          }
+
+        }
+        .animate{
+          position: relative;
+        }
         .logo{
           width: 30vw;
           max-width: 150px;
+          #left{
+            transform: translate(0, 0);
+          }
+          #right{
+            transform: translate(0, 0);
+          }
+          #sparkle{
+            opacity: 0;
+          }
         }
         .title{
           font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue";
           margin: 0;
           font-size: 2vw;
+        }
+      }
+      .msg{
+        @include transition($all);
+        opacity: 0;
+        margin-top: -60px;
+        position: absolute;
+        top: 0;
+        transform: translateY(-80%);
+        font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue";
+        font-size: 1em;
+        background-color: #fffcc4;
+        color: #ff3800;
+        padding: 20px;
+        border-radius: 5px;
+        &:after{
+          content: "";
+          width: 0;
+          height: 0;
+          border-top: 20px solid $bright;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          position: absolute;
+          bottom: -18px;
+          left: 10px;
         }
       }
       .contact{
@@ -176,12 +248,12 @@ div.home{
         }
       }
     }
-    &:hover{
-      .identity{
-        transform: translate(0,-100px);
-        -webkit-transform: translate(0,-100px);
-      }
-    }
+    // &:hover{
+    //   .identity{
+    //     transform: translate(0,-100px);
+    //     -webkit-transform: translate(0,-100px);
+    //   }
+    // }
   }
 }
 

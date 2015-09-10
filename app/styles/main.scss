@@ -180,7 +180,7 @@ div.home{
           }
         }
         .title{
-          font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue";
+          font-family: 'Roboto Condensed', "HelveticaNeue-CondensedBold", "Helvetica Neue", sans-serif;
           margin: 0;
           font-size: 2vw;
         }
@@ -191,8 +191,9 @@ div.home{
         margin-top: -60px;
         position: absolute;
         top: 0;
-        transform: translateY(-80%);
-        font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue";
+        transform: translateY(-60%);
+        font-family: 'Roboto Condensed', "HelveticaNeue-CondensedBold", "Helvetica Neue", sans-serif;
+        font-weight: bold;
         font-size: 1em;
         background-color: #fffcc4;
         color: #ff3800;
@@ -266,5 +267,23 @@ div.home{
       width: 100vw;
     }
   }
+  .animate{
+    .logo{
+      #left{
+        animation: left 2s ease infinite;
+      }
+      #right{
+        animation: right 2s ease infinite;
+      }
+      #sparkle{
+        animation: sparkle 2s ease infinite;
+      }
+    }
+    .msg{
+      opacity: 1 !important;
+    }
+
+  }
+
 
 }
